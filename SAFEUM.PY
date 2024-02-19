@@ -1,5 +1,4 @@
 
-#-----------------[ ⚜️ 𝑹𝑴𝑨𝑫 ⚜️ ]-----------------
 import os
 print('\x1b[2;36m')
 os.system('pip install websocket')
